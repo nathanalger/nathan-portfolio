@@ -1,0 +1,279 @@
+/* \/\/\/ DESKTOP NAVBAR OPTIONS \/\/\/ */
+:root {
+    --nav-height: 64px;
+    --button-padding: 12px;
+    --secondary-text: #e8c2ff;
+}
+
+.navbar {
+    /* Screen Pos */
+    position: fixed;
+    height: var(--nav-height);
+    width: 100vw;
+    z-index: 1000;
+    /* Functionality */
+    display: flex;
+    /* Appearance */
+    background-color: var(--nav);
+    border-bottom: 1px solid black;
+    box-shadow: 0px 0px 8px black;
+}
+
+div.navLogoSection {
+    background-color: var(--nav);
+    font-size: 20px;
+    flex: 2;
+    color: var(--text);
+    z-index: 1001;
+    align-content: center;
+    vertical-align: middle;
+    padding: 0 0 0 15px;
+    font-family: Raleway;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+div.navLogoSection p#thick {
+    margin: 0;
+    display: inline-block;
+    font-weight: 500;
+}
+
+    div.navLogoSection p#thin {
+        margin: 0;
+        display: inline-block;
+        font-weight: 200;
+        color: var(--secondary-text);
+    }
+
+div.navPagesSection {
+    background-color: var(--nav);
+    height: 100%;
+    flex: 6;
+    padding: 0 15px 0 15px;
+    margin: 0;
+}
+
+div.navSpacer {
+    position: relative;
+    height: var(--nav-height);
+    width: 100vw;
+}
+
+.navPagesSection ul {
+    list-style-type: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.navPagesSection li {
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+}
+
+.navButton {
+    display: inline-block;
+    height: 100%;
+    margin: 0px;
+    align-content: center;
+    vertical-align: middle;
+    padding: 0 20px 0 20px;
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.2s ease-in-out all;
+    font-size: 20px;
+    font-family: Raleway;
+    font-weight: 400;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.navButton.desktop:hover {
+    background-color: var(--nav-hover);
+    color: var(--secondary-text);
+}
+
+/* \/\/\/ MOBILE NAVBAR OPTIONS \/\/\/ */
+
+.navbar.mobile {
+    /* Screen Pos */
+    position: fixed;
+    height: var(--nav-height);
+    width: 100vw;
+    z-index: 1000;
+    /* Functionality */
+    display: flex;
+    flex-direction: row;
+    /* Appearance */
+    background-color: var(--nav);
+    border-bottom: 0px;
+    box-shadow: none !important;
+    transition: 0;
+}
+
+.navbar.open.mobile {
+    border: 0;
+    transition: 0.2s ease-in-out box-shadow;
+}
+div.icon-container-mobile {
+    height: 100%;
+    min-width: var(--nav-height) !important;
+    flex: 1;
+    background-color: var(--nav);
+    display: flex;
+    z-index: 1002;
+    padding: var(--button-padding);
+    box-sizing: border-box;
+}
+div.icon-spacer-mobile {
+    height: 100%;
+    max-width: var(--nav-height);
+    flex: 1;
+    background-color: var(--nav);
+    display: block;
+    align-self: flex-end;
+    z-index: 1002;
+}
+div.logo-container-mobile {
+    height: 100%;
+    flex-grow: 5;
+    background-color: blue;
+    display: block;
+    background-color: var(--nav);
+    font-size: 25px;
+    color: var(--text);
+    align-content: center;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Raleway;
+    font-size: 25px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+div.logo-container-mobile p#thick {
+    margin: 0;
+    display: inline-block;
+    font-weight: 500;
+    font-family: Raleway;
+}
+
+    div.logo-container-mobile p#thin {
+        margin: 0;
+        display: inline-block;
+        font-weight: 200;
+        color: var(--secondary-text);
+        font-family: Raleway;
+    }
+
+div img#logo {
+    max-height: calc(var(--nav-height) - var(--button-padding));
+    max-width: calc(var(--nav-height) - var(--button-padding));
+    filter: invert(1);
+}
+
+div.mobileNavLinks {
+    position: fixed;
+    background: var(--nav);
+    padding-top: var(--nav-height);
+    width: 100vw;
+    box-sizing: border-box;
+    color: white;
+    z-index: 2;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px black;
+    height: 100vh;
+    border-radius: 20px;
+    transition: 0.2s ease-in-out opacity;
+    will-change: transform, opacity;
+}
+    div.mobileNavLinks.open {
+        opacity: 100%;
+        pointer-events: initial;
+    }
+    div.mobileNavLinks.closed {
+        overflow: hidden;
+        opacity: 0%;
+        pointer-events: none;
+    }
+    /* OLD
+
+
+div.mobileNavLinks {
+    position: fixed;
+    background: var(--nav);
+    padding-top: var(--nav-height);
+    width: 100vw;
+    box-sizing: border-box;
+    color: white;
+    z-index: 2;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px black;
+    border-radius: 20px;
+    max-height: auto;
+    transition: max-height 0.3s ease-in;
+    will-change: transform, opacity;
+}
+    div.mobileNavLinks.open {
+        max-height: 700px;
+        overflow: clip;
+    }
+    div.mobileNavLinks.closed {
+        max-height: 0;
+        overflow: hidden;
+    }
+
+
+
+*/
+    .mobileNavLinks ul {
+        list-style-type: none;
+        height: 100%;
+        margin: 0;
+        padding: 10px 0px 10px 0px;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+    }
+
+.mobileNavLinks li {
+    display: flex;
+    width: 85vw;
+    padding: 0px;
+    text-align: center;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    transition: linear 0.09s background;
+}
+    .mobileNavLinks li:active {
+        background: var(--nav-hover);
+    }
+
+    .mobileNavLinks li p {
+        text-align: left;
+        display: inline-block;
+        padding: 30px;
+        flex: 4;
+        box-sizing: border-box;
+        font-size: 22px;
+    }
+
+        .mobileNavLinks li img {
+            text-align: right;
+            display: inline-block;
+            flex: 1;
+            height: 100%;
+        }
+
+hr.mobileLinkSpacer {
+    border: 0.5px solid var(--secondary-text);
+    margin: auto;
+    width: 75vw;
+}

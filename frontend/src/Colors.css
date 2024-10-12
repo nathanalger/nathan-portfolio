@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
+
+body, :root {
+    padding: 0;
+    margin: 0;
+    /* Colors */
+    --site-color: #333333;
+    --secondary-color: #48e5c2;
+    --tertiary-color: #fcfaf9;
+    --dark-color: #121212;
+    --light-color: #ffffff;
+    /* Brigtnesses */
+    --body-brightness: 48%;
+    --nav-brightness: 60%;
+    --secondary-text-brightness: 50%;
+    --nav-hover-brightness: 10%;
+    /* Navbar and Body */
+    --body-color: color-mix( in srgb, var(--dark-color) 100%, var(--site-color) var(--body-brightness) );
+    --nav: color-mix( in srgb, var(--dark-color) 80%, var(--site-color) var(--nav-brightness) );
+    --text: var(--light-color);
+    --text-dark: var(--dark-color);
+    --secondary-text: color-mix( in srgb, var(--light-color) 15%, var(--secondary-color) var(--secondary-text-brightness) );
+    --nav-hover: color-mix( in srgb, var(--dark-color) 85%, var(--secondary-color) var(--nav-hover-brightness) );
+    --button-shadow: color-mix(in srgb, var(--secondary-color) 60%, var(--dark-color) 50%);
+    --line-color: color-mix(in srgb, var(--secondary-color) 90%, var(--dark-color) 20%);
+    /* COMPONENTS */
+}

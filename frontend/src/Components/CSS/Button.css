@@ -1,0 +1,65 @@
+:root, .bottom {
+    --move: -15px;
+}
+
+button.bottom {
+    background: var(--button-shadow);
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 10px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: 0.07s ease-in-out transform;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+    button.bottom span {
+        display: block;
+        padding: 12px 42px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-family: Raleway;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        background: var(--secondary-color);
+        color: var(--text-dark);
+        transition: 0.1s ease-in-out transform;
+    }
+
+    button.bottom:hover span {
+        transform: translateY(-6px);
+    }
+
+button.bottom:active span {
+    transform: translateY(-2px);
+}
+
+/*MOBILE*/
+button.bottom.mobile {
+    background: var(--button-shadow);
+    border-radius: 10px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: 0.07s ease-in-out transform;
+}
+    button.bottom.mobile span {
+        display: block;
+        padding: 10px 22px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-family: Raleway;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        background: var(--secondary-color);
+        color: var(--text-dark);
+        transition: 0.1s ease-in-out transform;
+        transform: translateY(-6px);
+    }
+    button.bottom.mobile:active span {
+        transform: translateY(-2px);
+    }

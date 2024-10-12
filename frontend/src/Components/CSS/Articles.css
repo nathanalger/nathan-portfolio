@@ -1,0 +1,20 @@
+article.basic {
+	padding: 35px 50px 25px 50px;
+	box-sizing: border-box;
+	display: flex;
+}
+
+	article.basic div#basic_left {
+		flex: 5;
+	}
+	article.basic div#basic_right {
+		flex: 2;
+	}
+	article.basic div#basic_right img {
+		max-height: 100%;
+	}
+
+	article.basic.mobile {
+		flex-direction: column;
+		padding: 35px 25px;
+	}

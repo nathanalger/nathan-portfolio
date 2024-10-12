@@ -1,0 +1,7 @@
+div.page-wrapper {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - var(--nav-height));
+}

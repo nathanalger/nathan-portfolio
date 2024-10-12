@@ -1,0 +1,106 @@
+div.panelWrapper {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000060;
+    z-index: 2000;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+    div.panelWrapper div.panel {
+        display: flex;
+        background: var(--body-color);
+        height: 65vh;
+        width: 65vw;
+        box-shadow: black 0px 0px 55px;
+        flex-direction: column;
+    }
+
+    div.panelWrapper div.panel div.exitBar {
+        display: flex;
+        width: 65vw;
+        height: 75px;
+        flex-direction: row-reverse;
+    }
+
+div.exitBar div {
+    width: 75px;
+    height: 75px;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+    div.exitBar div div.closeButton {
+        flex: 1;
+        background: var(--body-color);
+        max-width: 35px;
+        max-height: 35px;
+        box-sizing: border-box;
+        border: 2px solid var(--secondary-color);
+        border-radius: 100%;
+        text-align: center;
+        vertical-align: middle;
+        transition: 0.2s linear border, box-shadow;
+    }
+        div.exitBar div div.closeButton:hover {
+            border: 2px solid var(--secondary-text);
+            box-shadow: 0px 0px 5px var(--secondary-text);
+        }
+
+div.titleBar {
+    flex: 1;
+    
+}
+    div.titleBar h1 {
+        text-align: left !important;
+        text-transform: capitalize;
+    }
+
+div.panelWrapper.desktop div.panel div.content {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    flex: 1;
+    padding: 15px;
+    box-sizing: border-box;
+    width: 65vw;
+}
+
+div.buttonContent {
+    position: fixed;
+    color: white;
+    font-family: Raleway;
+    font-size: 13px;
+}
+
+/* MOBILE */
+div.panelWrapper.mobile {
+    background-color: unset;
+}
+    div.panelWrapper.mobile div.panel {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    div.panelWrapper.mobile div.panel div.exitBar {
+        display: flex;
+        width: 100vw;
+        height: 75px;
+    }
+
+        div.panelWrapper.mobile div.panel div.content {
+            overflow-y: hidden;
+            overflow-x: hidden;
+            flex: 1;
+            width: 100vw;
+            padding: 15px;
+            box-sizing: border-box;
+        }
