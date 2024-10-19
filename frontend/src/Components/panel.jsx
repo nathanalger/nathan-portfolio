@@ -25,6 +25,8 @@ const PopUpPanel = ({ visible, close, content, title }) => {
                             <div className="titleBar">
                                 <COM.Text.Title>{title}</COM.Text.Title>
                             </div>
+
+                            <div></div>
                         </div>
 
                         <div className="content">

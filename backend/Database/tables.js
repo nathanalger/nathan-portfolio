@@ -54,7 +54,7 @@ function replaceTable(tableName, updatedTable) {
         const minutes = now.getMinutes();
         const hours = now.getHours();
         newTb.info.lastUpdate = `${now.getMonth() + 1}-${now.getDate()}-${now.getFullYear()} at ${hours}:${minutes} ${-(new Date().getTimezoneOffset() / 60)}`;
-        fs.writeFileSync("./Database/Tables/" + tableName + ".json", JSON.stringify(newTb));
+        fs.writeFileSync(tablePaths[tableName], JSON.stringify(newTb));
     } catch (e) {
         console.log("Error updating table: " + e);
     }

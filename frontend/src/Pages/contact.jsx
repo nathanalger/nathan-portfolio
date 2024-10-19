@@ -6,7 +6,7 @@ import Form, { Inputs } from '../Components/formBasic.jsx'
 import AnimationFrame from '../Components/animationFrame.jsx';
 import UseAPI from '../API/API.jsx';
 
-const Contact = ({ children }) => {
+const Contact = ({ children, open }) => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -14,6 +14,16 @@ const Contact = ({ children }) => {
 
     const event = new Event("pagechange");
     useEffect(() => { dispatchEvent(event) }, []);
+
+    const messageOnSubmit = () => {
+        return (
+            <>
+                <COM.Text.Standard>I have recieved your message, and I will try to get back to you as soon as possible!</COM.Text.Standard>
+                <COM.Text.Break/>
+                <COM.Text.Standard>Thank you, and have a great day!</COM.Text.Standard>
+            </>
+        );
+    }
 
     return (
         <AnimationFrame>
@@ -28,7 +38,19 @@ const Contact = ({ children }) => {
 
             <COM.Article.Basic>
 
-                <Form onSubmit={() => { console.log(UseAPI().sendContact(name, email, message)) }}>
+                <Form 
+                onSubmit={
+                    () => { 
+                        console.log(UseAPI().sendContact(name, email, message)) 
+                    }
+                }
+
+                then={
+                    () => {
+                        open('MESSAGE SENT!', messageOnSubmit);
+                    }
+                }
+                >
                     <COM.Text.Standard><i>Please provide your full name and email so I can respond to you in an appropriate manner and time frame. Thank you!</i></COM.Text.Standard>
                     <COM.Text.Break />
 

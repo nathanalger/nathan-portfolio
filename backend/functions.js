@@ -1,14 +1,20 @@
 const { db } = require('./Database/tables.js');
-
-
+const { v4: uuidv4 } = require('uuid');
+const { parse: uuidParse } = require('uuid');
+const { stringify: uuidStringify } = require('uuid');
+const bcryptjs = require('bcryptjs');
+const crypto = require('crypto-js');
 
 const Handle = (recieved) => {
     if (recieved.type != "" && functions[recieved.type] != undefined) {
+        let response = false;
         try {
-            functions[recieved.type](recieved);
+            response = functions[recieved.type](recieved);
         } catch (e) {
             console.log("Error " + recieved.type + ": " + e);
         }
+
+        return response;
     }
 }
 
@@ -23,7 +29,7 @@ const CONTACT_FORM_SUBMISSION = (recieved) => {
         return 0;
         }
 
-    var submissions = db.fetchTable("contactSubmissions");
+    let submissions = db.fetchTable("contactSubmissions");
     submissions.rows.push({
         "id": submissions.rows.length,
         "name": recieved.content.name,
@@ -31,9 +37,96 @@ const CONTACT_FORM_SUBMISSION = (recieved) => {
         "message": recieved.content.message
     });
     db.replaceTable ("contactSubmissions", submissions);
+
+    return true;
+}
+
+const LOGIN_ATTEMPT = (recieved) => {
+    console.log(recieved.type + " for " + recieved.content.email);
+    
+    let users = db.fetchTable("users");
+    let user = {};
+
+    let response = {
+        "foundUser": false,
+        "code": 0,
+        "token": "",
+        "message": ""
+    }
+
+    user = users.rows.filter(obj => obj.email = recieved.content.email)[0];
+
+    if(user == undefined || user == {}) {
+        console.log("Failed to find user!" + e);
+        response.code = 1;
+        response.foundUser = false;
+        response.token = "";
+        response.message = "Failed to find user " +  + "!";
+        return response;
+    } else {
+
+        // ACCOUNT EXISTS, CHECK PASSWORD
+        let correct = bcryptjs.compareSync(recieved.content.password, user.hash);
+        
+        if(correct != undefined && correct) {
+            response.code = 0;
+            response.foundUser = true;
+            response.token = user.token;
+            response.message = "Login success!";
+            return response;
+        } else {
+            response.code = 2;
+            response.foundUser = true;
+            response.token = "";
+            response.message = "Incorrect password!";
+            return response;
+        }
+
+    }
+}
+
+const NEW_ACCOUNT_CREATION = (recieved) => {
+    let users = db.fetchTable("users");
+    let obj = {
+        "id": "",
+        "token": "",
+        "username": recieved.content.username,
+        "email": recieved.content.email,
+        "firstName": recieved.content.firstName,
+        "lastName": recieved.content.lastName,
+        "hash": recieved.content.password,
+        "ip_list": [
+            recieved.client.ip
+        ],
+        "verifications": 
+        {
+            "email": false
+        },
+        "dateCreatedLocal": recieved.client.date
+    };
+
+    // Set User Token
+    obj.token = uuidv4();
+
+    // Set User ID
+    const idChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789";
+    let res = "";
+    for (let i = 0; i < 9; i++) {
+        let x = Math.floor(Math.random() * idChars.length)
+        res += idChars.charAt(x);
+    }
+
+    obj.id = res;
+    
+    console.log(res);
+
+    users.rows.push(obj);
+    db.replaceTable ("users", users);
 }
 
 const functions = {
-    "CONTACT_FORM_SUBMISSION": CONTACT_FORM_SUBMISSION
+    "CONTACT_FORM_SUBMISSION": CONTACT_FORM_SUBMISSION,
+    "NEW_ACCOUNT_CREATION": NEW_ACCOUNT_CREATION,
+    "LOGIN_ATTEMPT": LOGIN_ATTEMPT
 }
 

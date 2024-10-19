@@ -14,7 +14,7 @@ div.panelWrapper {
     div.panelWrapper div.panel {
         display: flex;
         background: var(--body-color);
-        height: 65vh;
+        max-height: 65vh;
         width: 65vw;
         box-shadow: black 0px 0px 55px;
         flex-direction: column;
@@ -66,7 +66,7 @@ div.titleBar {
     }
 
 div.panelWrapper.desktop div.panel div.content {
-    overflow-y: hidden;
+    overflow-y: scroll;
     overflow-x: hidden;
     flex: 1;
     padding: 15px;
@@ -86,6 +86,7 @@ div.panelWrapper.mobile {
     background-color: unset;
 }
     div.panelWrapper.mobile div.panel {
+        max-height: 100vh;
         height: 100vh;
         width: 100vw;
     }

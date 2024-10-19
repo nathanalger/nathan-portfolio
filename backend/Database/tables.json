@@ -1,3 +1,4 @@
 {
-  "contactSubmissions": "./Database/Tables/contactSubmissions.json"
+  "contactSubmissions": "./Database/Tables/contactSubmissions.json",
+  "users": "./Database/Tables/users.json"
 }

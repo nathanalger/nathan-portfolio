@@ -17,7 +17,6 @@ function App() {
 
     // Body = const function. like () => { ... }
     const openPopup = (title, body) => {
-        console.log("opened");
         setPopupContent(body);
         setPopupOpen(true);
         if (typeof title === 'string' || title instanceof String) {
@@ -26,7 +25,6 @@ function App() {
     }
 
     const closePopup = () => {
-        console.log("closed");
         setPopupOpen(false);
         setPopupContent(() => { });
     }
@@ -42,7 +40,7 @@ function App() {
                         <Routes>
                             <Route index element={<Pages.Home />} />
                             <Route path="/home" element={<Pages.Home />} />
-                            <Route path="/contact" element={<Pages.Contact />} />
+                            <Route path="/contact" element={<Pages.Contact open={openPopup} />} />
 
                             <Route path="/account" element={<Pages.Account open={openPopup} />}  />
 

@@ -7,6 +7,27 @@ form.formParent {
         text-align: center;
     }
 
+input[type=password] {
+    background-color: var(--dark-color);
+    font-family: 'Raleway';
+    border: none;
+    border-bottom: 2px solid var(--secondary-color);
+    color: white;
+    padding: 15px;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 75%;
+    border-radius: 5px;
+    transition: 0.2s ease-out box-shadow;
+}
+input[type=password].formText.mobile {
+    width: 85%;
+}
+input[type=password].formText:focus {
+    box-shadow: 0px 0px 10px var(--dark-color);
+}
+
 input[type=text].formText {
     background-color: var(--dark-color);
     font-family: 'Raleway';

@@ -2,12 +2,25 @@ import { useState, useEffect } from 'react';
 import useIsDesktop from '../Hooks/useIsDesktop.jsx';
 import './CSS/Forms.css';
 
-const Form = ({ children, onSubmit }) => {
-    var desktop = "" + useIsDesktop().type
+const Form = ({ children, onSubmit, then, mobileOnly, noClear }) => {
+    var desktop = "mobile";
+    if(!mobileOnly) desktop = "" + useIsDesktop().type;
+
+    const handle = (event) => {
+        event.preventDefault();
+
+        onSubmit();
+
+        if(!noClear)
+            document.getElementById('currentForm').reset();
+
+        if(then != undefined)
+            then();
+    }
 
     return (
 
-        <form className={"formParent " + desktop} onSubmit={ onSubmit }>
+        <form method={'POST'} action={''} className={"formParent " + desktop} onSubmit={ handle } id={'currentForm'}>
             { children }
         </form>
 
@@ -16,11 +29,19 @@ const Form = ({ children, onSubmit }) => {
 
 export default Form;
 
-const Text = ({ onChange, required }) => {
+const Text = ({ onChange, allowed, required, placeholder }) => {
     var desktop = "" + useIsDesktop().type
     var isreq = (required);
     return (
-        <input type="text" className={"formText " + desktop} onChange={onChange} required={isreq} />
+        <input type="text" placeholder={placeholder} className={"formText " + desktop} onChange={onChange} required={isreq} pattern={ allowed } />
+    );
+};
+
+const Password = ({ id, onChange, required, placeholder }) => {
+    var desktop = "" + useIsDesktop().type
+    var isreq = (required);
+    return (
+        <input id={id} type="password" placeholder={placeholder} className={"formText " + desktop} onChange={onChange} required={isreq} />
     );
 };
 
@@ -44,5 +65,6 @@ const Submit = ({ text }) => {
 export const Inputs = {
     "Text": Text,
     "Textarea": Textarea,
-    "Submit": Submit
+    "Submit": Submit,
+    "Password": Password
 }

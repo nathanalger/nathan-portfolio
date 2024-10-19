@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import AnimationFrame from '../../Components/animationFrame.jsx';
 import CreateAccount from './createAccount.jsx';
+import Login from './login.jsx';
 
 export default function Account({ children, open }) {
 
@@ -25,6 +26,10 @@ export default function Account({ children, open }) {
                 <COM.Button onClick={() => {
                     open('CREATE AN ACCOUNT', () => { return (<CreateAccount />); } )
                 }}>Create an Account</COM.Button>
+
+                <COM.Button onClick={() => {
+                    open('LOGIN', () => { return (<Login />); } )
+                }}>Login</COM.Button>
             </COM.Article.Basic>
 
         </AnimationFrame>
