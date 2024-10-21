@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Pages\\Account\\view.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\Pages\\Account\\view.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\App.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\App.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Components\\CSS\\panels.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\Components\\CSS\\panels.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Components\\panel.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\Components\\panel.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Components\\button.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\Components\\button.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Components\\CSS\\Forms.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\Components\\CSS\\Forms.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Pages\\Account\\createAccount.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\Pages\\Account\\createAccount.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Pages.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\Pages.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 215,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "panels.css",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Components\\CSS\\panels.css",
+              "RelativeDocumentMoniker": "frontend\\src\\Components\\CSS\\panels.css",
+              "ToolTip": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Components\\CSS\\panels.css",
+              "RelativeToolTip": "frontend\\src\\Components\\CSS\\panels.css",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAAAFYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-09T03:37:35.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "createAccount.jsx",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Pages\\Account\\createAccount.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\Pages\\Account\\createAccount.jsx",
+              "ToolTip": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Pages\\Account\\createAccount.jsx",
+              "RelativeToolTip": "frontend\\src\\Pages\\Account\\createAccount.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-09T03:33:48.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Forms.css",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Components\\CSS\\Forms.css",
+              "RelativeDocumentMoniker": "frontend\\src\\Components\\CSS\\Forms.css",
+              "ToolTip": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Components\\CSS\\Forms.css",
+              "RelativeToolTip": "frontend\\src\\Components\\CSS\\Forms.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-07T00:25:31.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "button.jsx",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Components\\button.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\Components\\button.jsx",
+              "ToolTip": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Components\\button.jsx",
+              "RelativeToolTip": "frontend\\src\\Components\\button.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-06T23:15:56.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "view.jsx",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Pages\\Account\\view.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\Pages\\Account\\view.jsx",
+              "ToolTip": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Pages\\Account\\view.jsx",
+              "RelativeToolTip": "frontend\\src\\Pages\\Account\\view.jsx",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-06T22:16:24.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.jsx",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\App.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\App.jsx",
+              "ToolTip": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\App.jsx",
+              "RelativeToolTip": "frontend\\src\\App.jsx",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAABYAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-06T22:09:45.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "panel.jsx",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Components\\panel.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\Components\\panel.jsx",
+              "ToolTip": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Components\\panel.jsx",
+              "RelativeToolTip": "frontend\\src\\Components\\panel.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-06T23:21:15.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Pages.jsx",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Pages.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\Pages.jsx",
+              "ToolTip": "C:\\Users\\Nathan\\Desktop\\School\\Projects\\NathanAlger\\frontend\\src\\Pages.jsx",
+              "RelativeToolTip": "frontend\\src\\Pages.jsx",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB8AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-06T22:11:40.844Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
