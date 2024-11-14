@@ -18,10 +18,6 @@ export const navPages = [
     { // More Page
         "displayName": "See More",
         "link": "/more"
-    },
-    { // Account Page
-        "displayName": "Account",
-        "link": "/account"
     }
 ];
 

@@ -1,9 +1,10 @@
 import './CSS/Navbar.css'
 import { navPages } from "../Pages.jsx";
 import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import COM from "../Components.jsx";
 import useIsDesktop from '../Hooks/useIsDesktop.jsx';
+import useAccount from '../Hooks/useAccount.jsx';
 
 const Navbar = ({ children }) => {
 
@@ -22,6 +23,8 @@ const Navbar = ({ children }) => {
     const thickText = "NATHAN";
     const thinText = "ALGER";
 
+    const acc = useAccount("Account").get("username").toUpperCase();
+
     if (desktop == 'desktop') {
         return (
             <>
@@ -35,11 +38,16 @@ const Navbar = ({ children }) => {
                         <ul>
                             { navPages.map((item, index) => (
                                 <li className="navPagesSection" key={index}>
-                                    <Link to={ item.link } className={"navButton " + desktop}>
+                                    <NavLink to={ item.link } className={"navButton " + desktop}>
                                         { item.displayName.toUpperCase() }
-                                    </Link>
+                                    </NavLink>
                                 </li>
                             )) }
+                            <li className="navPagesSection" key={navPages.length-1}>
+                                <NavLink to={ "/account" } className={"navButton " + desktop}>
+                                    { acc }
+                                </NavLink>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -62,7 +70,7 @@ const Navbar = ({ children }) => {
                 <div className={"mobileNavLinks " + mode}>
                     <ul>
                         {navPages.map((item, index) => (
-                            <Link to={item.link} onClick={() => { toggleNav() } } key={index}>
+                            <NavLink to={item.link} onClick={() => { toggleNav() } } key={index}>
                                     <li className={"mobileNavLinks "} >
                                         <p className={"navButton " + desktop}>
                                             {item.displayName.toUpperCase()}
@@ -70,8 +78,17 @@ const Navbar = ({ children }) => {
                                         <COM.Text.InlineIcon size="20px" src="/arrow.svg" />
                                     </li>
                                     <hr className="mobileLinkSpacer" />
-                                </Link>
+                                </NavLink>
                         ))}
+                        <NavLink to={"/account"} onClick={() => { toggleNav() } } key={navPages.length-1}>
+                                    <li className={"mobileNavLinks "} >
+                                        <p className={"navButton " + desktop}>
+                                            {acc}
+                                        </p>
+                                        <COM.Text.InlineIcon size="20px" src="/arrow.svg" />
+                                    </li>
+                                    <hr className="mobileLinkSpacer" />
+                                </NavLink>
                     </ul>
                 </div>
                 <div className="navSpacer"></div>

@@ -29,6 +29,20 @@ app.get('/apiKey', (req, res) => {
   };
 });
 
+// Fetch Account
+app.post('/account/:id/:token', (req, res) => {
+  let id = req.params.id;
+  let token = req.params.token;
+
+  let reply = Handle({
+    type: "FETCH_ACCOUNT",
+    token: token,
+    id: id
+  }) 
+
+  res.send(reply);
+})
+
 app.post('/toServer', (req, res) => {
   const data = req.body;
   data.client.ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
@@ -42,9 +56,7 @@ app.post('/toServer', (req, res) => {
 
 app.post('/login', (req, res) => {
   let data = req.body;
-  console.log("AAAAA");
   let response = Handle(data);
-  console.log(response);
   res.send(response);
 });
 

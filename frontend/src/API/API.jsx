@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
 import crypto from 'crypto-js';
-//import crypto from 'crypto-js';
+import { Cookies } from "react-cookie";
+
+const cookie = new Cookies();
 
 const UseAPI = () => {
 
@@ -93,7 +95,12 @@ const UseAPI = () => {
                 if(response.data.code == 0) {
 
                     // LOGIN SUCCESSFUL 
-
+                    let d = new Date();
+                    d.setTime(d.getTime() + (60*60*1000));
+                    cookie.remove("token");
+                    cookie.remove("account_id");
+                    cookie.set("token", response.data.token, {path: "/", expires: d});
+                    cookie.set("account_id", response.data.id, {path: "/", expires: d});
 
                     then({
                         "code": response.data.code, 
@@ -103,8 +110,6 @@ const UseAPI = () => {
 
                 } else {
 
-                    // LOGIN SUCCESSFUL 
-                    
                     then({
                         "code": response.data.code, 
                         "err": "Login Failed: " + response.data.message

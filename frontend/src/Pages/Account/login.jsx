@@ -4,7 +4,7 @@ import Form, { Inputs } from '../../Components/formBasic.jsx';
 import UseAPI from '../../API/API.jsx';
 
 const Login = () => {
-
+    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [err, setErr] = useState("");
@@ -12,7 +12,6 @@ const Login = () => {
     const loginAttempt = ( ) => {
         const res = UseAPI().attemptLogin(email, password, (result) => {
                 setErr("(" + result.code + ") " + result.err);
-                console.log(result);
         });
     };
 

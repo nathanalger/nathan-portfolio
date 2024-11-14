@@ -41,6 +41,25 @@ const CONTACT_FORM_SUBMISSION = (recieved) => {
     return true;
 }
 
+const FETCH_ACCOUNT = ( recieved ) => {
+    let token = recieved.token;
+    let id = recieved.id;
+
+    console.log("Fetching account " + id + ".")
+
+    let users = db.fetchTable("users");
+    let acc = users.rows.filter(obj => obj.id == recieved.id)[0];
+    if(acc != undefined) {
+        
+        return {
+            "found": true,
+            "account": acc
+        };
+    } else {
+        return {"found":false, "account":{}};
+    }
+}
+
 const LOGIN_ATTEMPT = (recieved) => {
     console.log(recieved.type + " for " + recieved.content.email);
     
@@ -51,16 +70,18 @@ const LOGIN_ATTEMPT = (recieved) => {
         "foundUser": false,
         "code": 0,
         "token": "",
+        "id": 0,
         "message": ""
     }
 
-    user = users.rows.filter(obj => obj.email = recieved.content.email)[0];
+    user = users.rows.filter(obj => obj.email == recieved.content.email)[0];
 
     if(user == undefined || user == {}) {
         console.log("Failed to find user!" + e);
         response.code = 1;
         response.foundUser = false;
         response.token = "";
+        response.id = 0;
         response.message = "Failed to find user " +  + "!";
         return response;
     } else {
@@ -72,13 +93,16 @@ const LOGIN_ATTEMPT = (recieved) => {
             response.code = 0;
             response.foundUser = true;
             response.token = user.token;
+            response.id = user.id;
             response.message = "Login success!";
+
             return response;
         } else {
             response.code = 2;
             response.foundUser = true;
             response.token = "";
-            response.message = "Incorrect password!";
+            response.id = 0;
+            response.message = "Incorrect username or password!";
             return response;
         }
 
@@ -127,6 +151,7 @@ const NEW_ACCOUNT_CREATION = (recieved) => {
 const functions = {
     "CONTACT_FORM_SUBMISSION": CONTACT_FORM_SUBMISSION,
     "NEW_ACCOUNT_CREATION": NEW_ACCOUNT_CREATION,
-    "LOGIN_ATTEMPT": LOGIN_ATTEMPT
+    "LOGIN_ATTEMPT": LOGIN_ATTEMPT,
+    "FETCH_ACCOUNT": FETCH_ACCOUNT
 }
 

@@ -3,12 +3,16 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import AnimationFrame from '../../Components/animationFrame.jsx';
 import CreateAccount from './createAccount.jsx';
+import useAccount from "../../Hooks/useAccount.jsx";
 import Login from './login.jsx';
 
 export default function Account({ children, open }) {
 
     const event = new Event("pagechange");
-    useEffect(() => { dispatchEvent(event) }, []);
+
+    useEffect(() => {
+        dispatchEvent(event); 
+    }, [0]);
 
     return (
         <AnimationFrame>
@@ -28,7 +32,7 @@ export default function Account({ children, open }) {
                 }}>Create an Account</COM.Button>
 
                 <COM.Button onClick={() => {
-                    open('LOGIN', () => { return (<Login />); } )
+                    open('LOGIN', () => { return (<Login />); } );
                 }}>Login</COM.Button>
             </COM.Article.Basic>
 
