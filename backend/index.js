@@ -10,10 +10,19 @@ console.log("Current encryption key: " + encryptionKey);
 
 var cors = require('cors');
 var bodyParser = require('body-parser');
+const allowedOrigins = ['https://nathanalger.com']; 
 
 db.loadTable("contactSubmissions");
 db.loadTable("users");
-app.use(cors());
+app.use(cors({
+  origin: (origin, callback) => {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);  // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS'), false);  // Reject the request
+    }
+  }
+}));
 app.use(bodyParser.json());
 
 app.post('/', (req, res) => {
