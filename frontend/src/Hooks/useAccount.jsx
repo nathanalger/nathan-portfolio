@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Cookies } from 'react-cookie';
+import apiConn from "../API/connection";
 
 const cookie = new Cookies();
 
@@ -20,7 +21,7 @@ const useAccount = (standard) => {
     const id = cookie.get("account_id");
 
     useEffect(() => {
-    axios.post('http://localhost:5000/account/'
+    axios.post(apiConn + '/account/'
          + id + '/' + token, "")
         .then((response) => {
             let reply = response.data;

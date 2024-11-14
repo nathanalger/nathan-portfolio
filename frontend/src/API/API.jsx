@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
 import Axios from 'axios';
-import crypto from 'crypto-js';
 import { Cookies } from "react-cookie";
+import apiConn from "./connection.jsx";
 
 const cookie = new Cookies();
 
@@ -34,7 +33,7 @@ const UseAPI = () => {
             toSend.type = type;
         toSend.content = content;
 
-        Axios.post('http://localhost:5000/toServer', toSend);
+        Axios.post(apiConn + '/toServer', toSend);
     };
 
     const sendContact = (name, email, text) => {
@@ -81,16 +80,12 @@ const UseAPI = () => {
             toSend.client.utcTime = `${hours + toSend.client.timeZone}:${minutes}`,
             toSend.type = "LOGIN_ATTEMPT";
 
-        // encrypt password!! this is not encrypted!!
-        Axios.get('http://localhost:5000/apiKey', "").then((response) => {
-
-            console.log("Successfully recieved API key: " + response.data);
             toSend.content = {
                 "email": email,
                 "password": password
             };
 
-            Axios.post('http://localhost:5000/login', toSend).then((response) => {
+            Axios.post(apiConn + '/login', toSend).then((response) => {
 
                 if(response.data.code == 0) {
 
@@ -119,22 +114,13 @@ const UseAPI = () => {
                 //callback(loginSuccess);
             }).catch((e) => {
                 then({
-                    "code": response.data.code,
+                    "code": 2,
                     "err": "Error fetching account: " + e
 
                 });
                 //callback(false);
             });
             
-        }).catch((e) => {
-            console.log(e);
-            then(
-                {
-                    "code": response.data.code,
-                    "err": "Error fetching account: " + e
-                }
-            );
-        });
     }
 
     return {
